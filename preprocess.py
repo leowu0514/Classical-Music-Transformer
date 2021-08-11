@@ -240,34 +240,33 @@ def data_aug(item):
     return event_seq
 
 def event2multihot(item, bpm = 120):
+    ### Type ###
+    # 0 : Bar & Pos
+    # 1 : Dur & Pitch
+    # 2 : Tone
+    # 3 : Chord
+    # 4 : Phrase
 
-### Type ###
-# 0 : Bar & Pos
-# 1 : Dur & Pitch
-# 2 : Tone
-# 3 : Chord
-# 4 : Phrase
+    ### Bar & Pos ###
+    # 0 : ignore
+    # 1-32 : Pos
+    # 33 : Bar
 
-### Bar & Pos ###
-# 0 : ignore
-# 1-32 : Pos
-# 33 : Bar
+    ### Tone ###
+    # 0 : ignore
+    # 1-24 : chord
 
-### Tone ###
-# 0 : ignore
-# 1-24 : chord
+    ### Chord ###
+    # 0 : ignore
+    # 1-108 : chord
 
-### Chord ###
-# 0 : ignore
-# 1-108 : chord
+    ### Dur ###
+    # 0 : ignore
+    # 1-64 : Dur
 
-### Dur ###
-# 0 : ignore
-# 1-64 : Dur
-
-### Pitch ###
-# 0 : ignore
-# 1-128 : Pitch
+    ### Pitch ###
+    # 0 : ignore
+    # 1-128 : Pitch
 
     type_len = 5
     barpos_len = 1 + 32 + 1
