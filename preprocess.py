@@ -403,7 +403,7 @@ phrasetype = np.unique(np.array([j[-1] for i in phrase_labels for j in i ]))
 
 ### assign phrase type to num ###
 ### phrase:num ###
-phrase_dict = {phrase_type[i]:i for i in range(len(phrasetype))}
+phrase_dict = {phrasetype[i]:i for i in range(len(phrasetype))}
 
 ### onset, end, chord/tone/phrase ###
 chords = [None for _ in range(32)]
@@ -418,7 +418,10 @@ for i in range(32):
 ### make into event sequences ###
 pieces = load_events(chords, tones, phrases)
 
+### train pieces
 train_indices = [4, 11, 16, 20, 26, 31, 3, 8, 12, 17, 23, 21, 27, 29, 30, 10, 1, 2, 7, 18, 28, 15, 25, 5, 19, 22, 14, 19, 24, 6]
+
+### test pieces
 test_indices = [0, 13]
 
 train = []
