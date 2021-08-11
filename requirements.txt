@@ -1,0 +1,4 @@
+numpy
+pretty-midi
+torch
+xlrd==1.2.0
