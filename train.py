@@ -110,7 +110,7 @@ device = torch.device("cuda" if use_cuda else "cpu")
 train = np.load("train_BPSFH.npy")
 
 ### make into sequences of 128, with slide window 1
-train_slide = np.transpose(strided_axis1(train.T, 128, 128), (0,2,1))
+train_slide = np.transpose(strided_axis1(train.T, 128, 1), (0,2,1))
 train_x = train_slide[:-1]
 train_y = train_slide[1:]
 
